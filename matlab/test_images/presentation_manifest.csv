@@ -1,0 +1,11 @@
+OriginalFile,ActualGrade,PredictedGrade,Confidence,SavedPath
+668a319c2d23.png,0,0,0.999996608569053,C:\Users\azizn\RetinaGuideXAI\matlab\RetinaGuide_Presentation_Images\Grade_0_No_DR\Grade_0_Image_01.png
+f48241b0c995.png,0,0,0.999983452323056,C:\Users\azizn\RetinaGuideXAI\matlab\RetinaGuide_Presentation_Images\Grade_0_No_DR\Grade_0_Image_02.png
+b7278b4f2448.png,1,1,0.560768308934311,C:\Users\azizn\RetinaGuideXAI\matlab\RetinaGuide_Presentation_Images\Grade_1_Mild_DR\Grade_1_Image_01.png
+71c1a3cdbe47.png,1,1,0.997602373359482,C:\Users\azizn\RetinaGuideXAI\matlab\RetinaGuide_Presentation_Images\Grade_1_Mild_DR\Grade_1_Image_02.png
+26999ebc21de.png,2,2,0.998706638820034,C:\Users\azizn\RetinaGuideXAI\matlab\RetinaGuide_Presentation_Images\Grade_2_Moderate_DR\Grade_2_Image_01.png
+fc603cbedb41.png,2,2,0.999988329556504,C:\Users\azizn\RetinaGuideXAI\matlab\RetinaGuide_Presentation_Images\Grade_2_Moderate_DR\Grade_2_Image_02.png
+0dc8d25b3f69.png,3,3,0.860533195757022,C:\Users\azizn\RetinaGuideXAI\matlab\RetinaGuide_Presentation_Images\Grade_3_Severe_DR\Grade_3_Image_01.png
+80e7cc0a0649.png,3,3,0.999739200049311,C:\Users\azizn\RetinaGuideXAI\matlab\RetinaGuide_Presentation_Images\Grade_3_Severe_DR\Grade_3_Image_02.png
+07122e268a1d.png,4,4,0.99995983291135,C:\Users\azizn\RetinaGuideXAI\matlab\RetinaGuide_Presentation_Images\Grade_4_Proliferative_DR\Grade_4_Image_01.png
+f8cf7ed8ef00.png,4,4,0.999841198502526,C:\Users\azizn\RetinaGuideXAI\matlab\RetinaGuide_Presentation_Images\Grade_4_Proliferative_DR\Grade_4_Image_02.png
