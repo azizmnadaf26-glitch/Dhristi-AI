@@ -1,0 +1,170 @@
+{
+  "workflows": {
+    "Health Check": {
+      "passed": true,
+      "details": "{\"status\":\"ok\",\"engine\":\"fake\",\"engine_state\":\"up\"}"
+    },
+    "Workflow 1 - Operator Login": {
+      "passed": true,
+      "details": ""
+    },
+    "Workflow 1 - Operator Profile (/api/me)": {
+      "passed": true,
+      "details": "Role: operator"
+    },
+    "Workflow 1 - Operator Image Upload": {
+      "passed": true,
+      "details": "Case ID: 3"
+    },
+    "Workflow 1 - Case Analysis Complete": {
+      "passed": true,
+      "details": "Engine Status: graded"
+    },
+    "Workflow 1 - Case in Screening Worklist": {
+      "passed": true,
+      "details": "Found case 3 in worklist"
+    },
+    "Workflow 1 - Authenticated Image Retrieval": {
+      "passed": true,
+      "details": "Size: 228216 bytes, Content-Type: image/png"
+    },
+    "Workflow 2 - Reject Invalid File Type": {
+      "passed": true,
+      "details": "Status: 422"
+    },
+    "Workflow 2 - Reject Empty File": {
+      "passed": true,
+      "details": "Status: 422"
+    },
+    "Workflow 2 - Reject Invalid Eye Parameter": {
+      "passed": true,
+      "details": "Status: 422"
+    },
+    "Workflow 3 - Clinician Login": {
+      "passed": true,
+      "details": ""
+    },
+    "Workflow 3 - Clinician Case Access": {
+      "passed": true,
+      "details": ""
+    },
+    "Workflow 3 - Clinician Request Review": {
+      "passed": true,
+      "details": "Status: 200"
+    },
+    "Workflow 3 - Clinician Review Submission": {
+      "passed": true,
+      "details": "Status: 201"
+    },
+    "Workflow 3 - Case Review Status Updated": {
+      "passed": true,
+      "details": "Status: reviewed"
+    },
+    "Workflow 4 - Planner Login": {
+      "passed": true,
+      "details": ""
+    },
+    "Workflow 4 - Operational Summary": {
+      "passed": true,
+      "details": "Total cases: 3"
+    },
+    "Workflow 4 - Evaluation Dashboard": {
+      "passed": true,
+      "details": "Status: 200"
+    },
+    "Workflow 4 - Launch Simulation": {
+      "passed": true,
+      "details": "Sim ID: 2, Status: queued"
+    },
+    "Workflow 4 - Simulation Run Completed": {
+      "passed": true,
+      "details": "Status: completed"
+    },
+    "Workflow 4 - Retrieve Simulation History": {
+      "passed": true,
+      "details": "Simulations count: 2"
+    },
+    "Workflow 5 - Admin Login": {
+      "passed": true,
+      "details": ""
+    },
+    "Workflow 5 - User Management List": {
+      "passed": true,
+      "details": "Total users: 5"
+    },
+    "Workflow 5 - Admin Create User": {
+      "passed": true,
+      "details": "Created ID: 6"
+    },
+    "Workflow 5 - Admin Deactivate User": {
+      "passed": true,
+      "details": ""
+    },
+    "Workflow 5 - Admin Password Reset": {
+      "passed": true,
+      "details": ""
+    },
+    "Workflow 5 - Admin Audit Log": {
+      "passed": true,
+      "details": "Total audit events: 51"
+    },
+    "Workflow 5 - Model Registry": {
+      "passed": true,
+      "details": "Models total: 1"
+    }
+  },
+  "security": {
+    "Session Refresh with Cookie": {
+      "passed": true,
+      "details": ""
+    },
+    "Reject Unauthenticated Admin Access": {
+      "passed": true,
+      "details": ""
+    },
+    "RBAC - Operator Forbidden on Admin API": {
+      "passed": true,
+      "details": ""
+    },
+    "RBAC - Clinician Forbidden on Admin Audit": {
+      "passed": true,
+      "details": ""
+    },
+    "Reject Malformed/Invalid Token": {
+      "passed": true,
+      "details": ""
+    }
+  },
+  "negative": {
+    "Duplicate Image Submission Rejected (409)": {
+      "passed": true,
+      "details": "Code: duplicate_image"
+    }
+  },
+  "db": {
+    "Database Users Table Count": {
+      "passed": true,
+      "details": "Found 6 users"
+    },
+    "Database Cases Table Count": {
+      "passed": true,
+      "details": "Found 3 cases"
+    },
+    "Database Audit Events Count": {
+      "passed": true,
+      "details": "Found 54 audit events in audit_log"
+    },
+    "Database Reviews Count": {
+      "passed": true,
+      "details": "Found 1 clinical reviews"
+    },
+    "Database Predictions Count": {
+      "passed": true,
+      "details": "Found 3 prediction records"
+    },
+    "Database Foreign Key Integrity": {
+      "passed": true,
+      "details": "FK errors: 0"
+    }
+  }
+}
