@@ -35,6 +35,12 @@ backend/storage/
 logs/
 backend/logs/
 
+# MATLAB temporary & large cache directories
+*.asv
+matlab/*.asv
+matlab/**/full_validation_images/
+matlab/**/validation_images/
+
 # Build and production outputs
 build/
 frontend/build/
@@ -66,3 +72,4 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+

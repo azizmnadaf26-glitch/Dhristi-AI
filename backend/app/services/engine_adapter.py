@@ -5,6 +5,7 @@ MatlabAdapter is a documented stub: the project lead completes the live connecti
 """
 
 import logging
+import os
 import threading
 from abc import ABC, abstractmethod
 from pathlib import Path
@@ -129,8 +130,25 @@ class MatlabAdapter(EngineAdapter):
         self._engine = None
         self._net = None
         self._lock = threading.Lock()
-        self._matlab_dir = r"C:\Users\azizn\RetinaGuideXAI\matlab"
-        self._model_path = r"C:\Users\azizn\RetinaGuideXAI\matlab\deployment_package\retinaguide_efficientnet_b0_legacy.onnx"
+
+        # Resolve MATLAB directory dynamically
+        root_dir = Path(__file__).resolve().parents[3]
+        local_matlab_dir = root_dir / "matlab"
+        legacy_matlab_dir = Path(r"C:\Users\azizn\RetinaGuideXAI\matlab")
+
+        env_matlab = os.getenv("MATLAB_DIR")
+        if env_matlab and Path(env_matlab).exists():
+            self._matlab_dir = env_matlab
+        elif local_matlab_dir.exists():
+            self._matlab_dir = str(local_matlab_dir)
+        elif legacy_matlab_dir.exists():
+            self._matlab_dir = str(legacy_matlab_dir)
+        else:
+            self._matlab_dir = str(local_matlab_dir)
+
+        env_model = os.getenv("MATLAB_MODEL_PATH")
+        default_model = Path(self._matlab_dir) / "deployment_package" / "retinaguide_efficientnet_b0_legacy.onnx"
+        self._model_path = env_model if env_model and Path(env_model).exists() else str(default_model)
 
     def start(self) -> None:
         with self._lock:

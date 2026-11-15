@@ -1,0 +1,38 @@
+==================================================
+RETINAGUIDE XAI - ANALYSIS REPORT
+==================================================
+Report ID: RGXAI-20261029-100129
+Analysis timestamp: 29-Oct-2026 10:01:29
+Image filename: fundus_test.jpeg
+ 
+RETINAGUIDE XAI - IMAGE QUALITY REPORT
+Image dimensions: 1024 x 1024
+Mean brightness: 0.3330
+Contrast standard deviation: 0.1837
+Sharpness score: 0.0162
+Retinal field area ratio: 78.77%
+
+INDIVIDUAL QUALITY CHECKS
+Dimensions check: PASS
+Brightness check: PASS
+Contrast check: PASS
+Sharpness check: PASS
+Retinal-field area check: PASS
+Overall quality status: Preliminary checks passed
+
+RETINAL-FIELD ASSESSMENT
+Field detected: Yes
+Retinal-field area ratio: 78.77%
+Field assessment status: Preliminary field detected
+Field assessment message: A sufficiently large non-dark region was detected.
+
+RESULT: All preliminary quality checks passed.
+These checks are engineering heuristics.
+Clinical suitability has not been validated.
+
+MODEL STATUS: Not ready for inference.
+Model file path has not been configured.
+No DR classification was performed.
+Grad-CAM was not generated.
+
+DISCLAIMER: Preliminary image-quality checks do not establish a clinical diagnosis.

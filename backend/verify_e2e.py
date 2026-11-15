@@ -5,8 +5,10 @@ import json
 import sqlite3
 import httpx
 
+from pathlib import Path
+
 BASE_URL = "http://127.0.0.1:8000"
-DB_PATH = r"C:\Users\azizn\DhristiAI\backend\screening.db"
+DB_PATH = str(Path(__file__).resolve().parent / "screening.db")
 
 results = {
     "workflows": {},
@@ -40,7 +42,7 @@ me_data = me_res.json()
 log_test("workflows", "Workflow 1 - Operator Profile (/api/me)", me_res.status_code == 200 and me_data.get("role") == "operator", f"Role: {me_data.get('role')}")
 
 # Upload Fundus Image
-sample_img_path = r"C:\Users\azizn\DhristiAI\frontend\public\retinal\fundus-3.png"
+sample_img_path = Path(__file__).resolve().parents[1] / "frontend" / "public" / "retinal" / "fundus-3.png"
 with open(sample_img_path, "rb") as f:
     img_bytes = f.read()
 
@@ -254,7 +256,8 @@ log_test("db", "Database Foreign Key Integrity", len(fk_errors) == 0, f"FK error
 conn.close()
 
 # Save output
-with open(r"C:\Users\azizn\DhristiAI\backend\e2e_results.json", "w") as f:
+results_file = Path(__file__).resolve().parent / "e2e_results.json"
+with open(results_file, "w") as f:
     json.dump(results, f, indent=2)
 
 print("\n--- SUMMARY ---")

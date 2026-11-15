@@ -72,7 +72,11 @@ def run_e2e_matlab_test():
 
     # Step 4: Upload Real Fundus Image
     print("\n--- STEP 4: UPLOAD REAL FUNDUS IMAGE ---")
-    fundus_path = r"C:\Users\azizn\RetinaGuideXAI\matlab\test_images\fundus_test.jpeg"
+    test_matlab_dir = Path(__file__).resolve().parents[1] / "matlab"
+    legacy_dir = Path(r"C:\Users\azizn\RetinaGuideXAI\matlab")
+    base_m_dir = test_matlab_dir if test_matlab_dir.exists() else legacy_dir
+
+    fundus_path = base_m_dir / "test_images" / "fundus_test.jpeg"
     with open(fundus_path, "rb") as f:
         fundus_data = f.read() + os.urandom(8)
     patient_ref = f"MATLAB-E2E-{uuid.uuid4().hex[:6]}"
@@ -181,7 +185,7 @@ def run_e2e_matlab_test():
 
     # Step 10: Negative Test - Degraded Image
     print("\n--- STEP 10: NEGATIVE QUALITY TEST (DEGRADED IMAGE) ---")
-    dark_path = r"C:\Users\azizn\RetinaGuideXAI\matlab\test_images\quality_tests\dark_test.jpeg"
+    dark_path = base_m_dir / "test_images" / "quality_tests" / "dark_test.jpeg"
     with open(dark_path, "rb") as f:
         dark_data = f.read() + os.urandom(8)
     dark_patient_ref = f"MATLAB-DARK-{uuid.uuid4().hex[:6]}"

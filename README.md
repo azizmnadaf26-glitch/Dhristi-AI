@@ -23,14 +23,14 @@
 
 ```
 Dhristi-AI/
-├── backend/                  # FastAPI Application & ML Integration
-│   ├── alembic/              # Database migrations
+├── backend/                  # FastAPI Application & Engine Adapters
+│   ├── alembic/              # Database schema migrations
 │   ├── app/
 │   │   ├── models/           # SQLAlchemy ORM models (Cases, Users, Images, Audits)
 │   │   ├── routers/          # REST API endpoints (Auth, Cases, Images, Admin, Meta)
 │   │   ├── schemas/          # Pydantic validation schemas
 │   │   ├── security/         # JWT authentication, password hashing & permissions
-│   │   └── services/         # Engine adapters (MATLAB / Fake Engine), PDF generator, Job queue
+│   │   └── services/         # Engine adapters (MATLAB / Demo), PDF generator, Job queue
 │   ├── docs/                 # OpenAPI contract specifications & documentation
 │   ├── scripts/              # User management & administration scripts
 │   ├── tests/                # Comprehensive test suites
@@ -40,13 +40,26 @@ Dhristi-AI/
 ├── frontend/                 # Vite + React 19 Web Interface
 │   ├── public/               # Static assets & demo retinal images
 │   ├── src/
-│   │   ├── components/       # UI components & diagnostic viewer
+│   │   ├── components/       # UI components & interactive diagnostic viewer
 │   │   ├── layouts/          # Dashboard & authentication layouts
 │   │   ├── pages/            # Viewports (Upload, Cases, Analysis, Admin)
 │   │   ├── routes/           # Protected routing and guards
 │   │   └── services/         # API clients
 │   ├── package.json          # Node dependencies and scripts
 │   └── README.md             # Frontend guide
+│
+├── matlab/                   # MATLAB Deep Learning & Explainable AI Core
+│   ├── checkImageQuality.m   # Pre-screening image validation (illumination, blur, focus)
+│   ├── runRetinaInference.m  # Multi-class DR severity classification pipeline
+│   ├── generateRetinaGradCAM.m # Explainable AI Grad-CAM heatmap generation
+│   ├── deployment_package/   # Trained EfficientNet-B0 ONNX weights (15.3 MB)
+│   ├── test_images/          # Benchmark validation & degraded quality test scans
+│   └── simulation/           # Counterfactual clinical simulations
+│
+├── dataset/                  # APTOS 2019 Blindness Detection Metadata
+│   ├── train.csv             # 3,662 clinical ground truth labels (Grades 0–4)
+│   ├── test.csv              # Holdout evaluation test split metadata
+│   └── README.md             # Dataset benchmark documentation & download instructions
 │
 └── README.md                 # Project root documentation
 ```
@@ -130,3 +143,4 @@ npm run dev
 
 Designed and developed for clinical decision support in diabetic retinopathy screening.
 Decision support only — not a standalone diagnostic device.
+

@@ -1,0 +1,15 @@
+RETINAGUIDE XAI - IMAGE QUALITY REPORT
+Image dimensions: 1024 x 1024
+Mean brightness: 0.3330
+Contrast standard deviation: 0.1837
+Sharpness score: 0.0162
+Retinal field area ratio: 78.77%
+
+RESULT: All preliminary quality checks passed.
+These checks are engineering heuristics.
+Clinical suitability has not been validated.
+
+MODEL STATUS: Not ready for inference.
+Model file path has not been configured.
+No DR classification was performed.
+Grad-CAM was not generated.

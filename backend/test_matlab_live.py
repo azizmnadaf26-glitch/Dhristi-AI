@@ -20,8 +20,12 @@ def run_test():
     print("Status after start:", adapter.status())
     assert adapter.status() == "up"
 
-    # Insert a test case and image record for test
-    test_fundus_path = r"C:\Users\azizn\RetinaGuideXAI\matlab\test_images\fundus_test.jpeg"
+    # Locate test fundus image
+    test_matlab_dir = Path(__file__).resolve().parents[1] / "matlab"
+    legacy_dir = Path(r"C:\Users\azizn\RetinaGuideXAI\matlab")
+    base_m_dir = test_matlab_dir if test_matlab_dir.exists() else legacy_dir
+
+    test_fundus_path = base_m_dir / "test_images" / "fundus_test.jpeg"
     with open(test_fundus_path, "rb") as f:
         data = f.read()
     sha = hashlib.sha256(data).hexdigest()
@@ -65,7 +69,7 @@ def run_test():
         assert hm.size == (384, 384)
 
     print("--- STEP 3: ANALYZE DEGRADED IMAGE (QUALITY TEST) ---")
-    dark_test_path = r"C:\Users\azizn\RetinaGuideXAI\matlab\test_images\quality_tests\dark_test.jpeg"
+    dark_test_path = base_m_dir / "test_images" / "quality_tests" / "dark_test.jpeg"
     with open(dark_test_path, "rb") as f:
         dark_data = f.read()
     dark_sha = hashlib.sha256(dark_data).hexdigest()
